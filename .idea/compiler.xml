@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="examenfinal" />
+        <module name="TPFinalArgentinaProgramaG9" />
       </profile>
     </annotationProcessing>
   </component>

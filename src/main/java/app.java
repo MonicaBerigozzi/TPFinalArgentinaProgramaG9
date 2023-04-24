@@ -54,22 +54,29 @@ public class app {
         }
 
         ////creacion de las casas
-        Casa casaGryffindor = new Casa(1, "Gryffindor");
+        /*Casa casaGryffindor = new Casa(1, "Gryffindor");
         Casa casaSlytherin = new Casa(2, "Slytherin");
         Casa casaHufflepuff = new Casa(3, "Hufflepuff");
-        Casa casaRavenclaw = new Casa(4, "Ravenclaw");
+        Casa casaRavenclaw = new Casa(4, "Ravenclaw");*/
         ArrayList<Estudiante> noHumano = new ArrayList<>();
 
 
         ////agregarmos los estudiantes a partir de la lista de estudiantes
-        agregarEstudianteAcasa(lista, casaGryffindor, casaSlytherin, casaHufflepuff, casaRavenclaw, noHumano);
+        /*agregarEstudianteAcasa(lista, casaGryffindor, casaSlytherin, casaHufflepuff, casaRavenclaw, noHumano);
         System.out.printf(casaGryffindor.toString() + "\n");
         System.out.printf(casaSlytherin.toString() + "\n");
         System.out.printf(casaHufflepuff.toString() + "\n");
-        System.out.printf(casaRavenclaw.toString() + "\n");
+        System.out.printf(casaRavenclaw.toString() + "\n");*/
+
+        ///
+        System.out.printf(hogwarts.getCasa("Gryffindor").toString() + "\n");
+        System.out.printf(hogwarts.getCasa("Slytherin").toString() + "\n");
+        System.out.printf(hogwarts.getCasa("Hufflepuff").toString() + "\n");
+        System.out.printf(hogwarts.getCasa("Ravenclaw").toString() + "\n");
         ////mustra de los estudiantes no humanos
         System.out.println("\nEstudiantes no humanos: ");
-        estudiantesNoHumanos(lista, noHumano);
+
+        noHumano=hogwarts.todosEstudiantesNoHumanos();
         for(Estudiante e: noHumano){
             System.out.printf(e.getNombre() + "(" + e.getEspecie() + ") " + ", ");
         }
@@ -80,7 +87,7 @@ public class app {
     }
 
     ////Método para agregar estudiantes a la casa
-    public static void agregarEstudianteAcasa(ArrayList<Estudiante> lista, Casa casaGryffindor,Casa casaSlytherin, Casa casaHufflepuff,Casa casaRavenclaw, ArrayList<Estudiante> noHumano){
+   /* public static void agregarEstudianteAcasa(ArrayList<Estudiante> lista, Casa casaGryffindor,Casa casaSlytherin, Casa casaHufflepuff,Casa casaRavenclaw, ArrayList<Estudiante> noHumano){
         for(Estudiante e : lista){
             if(e.getNombreCasa().equals("Gryffindor")){
                 casaGryffindor.agregarEstudiante(e);
@@ -95,10 +102,10 @@ public class app {
 
         }
 
-    }
+    }*/
     ////Método para identidicar los estudiantes no humanos(Se consideró que si la especia tiene la palabra Humano,
     ////entonces es humano, por má que tenga otra palabra más)
-    public static void estudiantesNoHumanos(ArrayList<Estudiante> lista, ArrayList<Estudiante> noHumano){
+    /*public static void estudiantesNoHumanos(ArrayList<Estudiante> lista, ArrayList<Estudiante> noHumano){
 
         for(Estudiante e: lista){
             if(!e.getEspecie().contains("Human")){
@@ -106,5 +113,5 @@ public class app {
             }
         }
 
-    }
+    }*/
 }

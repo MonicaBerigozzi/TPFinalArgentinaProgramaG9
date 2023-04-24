@@ -44,4 +44,14 @@ public class Casa {
                 ", estudiantes=" + estudiantes +
                 '}';
     }
+
+    public  ArrayList<Estudiante> estudiantesNoHumanos(){
+        ArrayList<Estudiante> noHumano = new ArrayList<>();
+        for(Estudiante e: estudiantes){
+            if(!e.getEspecie().contains("Human")){
+                noHumano.add(e);
+            }
+        }
+        return noHumano;
+    }
 }

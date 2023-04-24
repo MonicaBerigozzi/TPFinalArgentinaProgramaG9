@@ -4,6 +4,7 @@ import modelo.Casa;
 import modelo.Estudiante;
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,4 +33,11 @@ public class Hogwarts {
         return casas.get(nombre);
     }
 
+    public ArrayList<Estudiante> todosEstudiantesNoHumanos(){
+        ArrayList<Estudiante> noHumano = new ArrayList<>(casas.get("Gryffindor").estudiantesNoHumanos());
+        noHumano.addAll(casas.get("Slytherin").estudiantesNoHumanos());
+        noHumano.addAll(casas.get("Hufflepuff").estudiantesNoHumanos());
+        noHumano.addAll(casas.get("Ravenclaw").estudiantesNoHumanos());
+        return noHumano;
+    }
 }
