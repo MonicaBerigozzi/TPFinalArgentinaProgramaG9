@@ -1,8 +1,11 @@
+import data.ProveedorConexionSqlite;
+import data.RepositorioCasas;
 import modelo.Casa;
 import modelo.Estudiante;
 import proceso.Hogwarts;
 import proceso.ProcesadorArchivoCsv;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -81,7 +84,18 @@ public class app {
             System.out.printf(e.getNombre() + "(" + e.getEspecie() + ") " + ", ");
         }
 
+        /// Persistir Casas
+        Connection miConexion = ProveedorConexionSqlite.conectar(".\\data\\baseDeDatos.sqlite");
+        RepositorioCasas repositorio = new RepositorioCasas(miConexion);
 
+        for (String nombreCasa : new String[] {"Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"}){
+            Casa casa = hogwarts.getCasa(nombreCasa);
+            Casa casaGuardada = repositorio.getCasa(casa.getIdCasa());
+            if (casaGuardada == null) {
+                repositorio.agregarCasa(casa);
+            }
+
+        }
 
 
     }
