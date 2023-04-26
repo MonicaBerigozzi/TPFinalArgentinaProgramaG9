@@ -1,11 +1,13 @@
 import data.ProveedorConexionSqlite;
 import data.RepositorioCasas;
+import data.RepositorioEstudiantes;
 import modelo.Casa;
 import modelo.Estudiante;
 import proceso.Hogwarts;
 import proceso.ProcesadorArchivoCsv;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -84,6 +86,7 @@ public class app {
             System.out.printf(e.getNombre() + "(" + e.getEspecie() + ") " + ", ");
         }
 
+
         /// Persistir Casas
         Connection miConexion = ProveedorConexionSqlite.conectar(".\\data\\baseDeDatos.sqlite");
         RepositorioCasas repositorio = new RepositorioCasas(miConexion);
@@ -97,7 +100,17 @@ public class app {
 
         }
 
+        /// Persistir Estudiantes Humanos
+        Connection miConexion1 = ProveedorConexionSqlite.conectar(".\\data\\baseDeDatos.sqlite");
+        RepositorioEstudiantes repoEstud = new RepositorioEstudiantes(miConexion1);
 
+        ArrayList<Estudiante> todosHumanos = hogwarts.todosEstudiantesHumanos();
+        for (Estudiante e: todosHumanos){
+            Estudiante estGuardado = repoEstud.getEstudiante(e.getNumero());
+            if (estGuardado==null){
+                repoEstud.agregarEstudiante(e);
+            }
+        }
     }
 
     ////Método para agregar estudiantes a la casa

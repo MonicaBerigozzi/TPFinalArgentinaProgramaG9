@@ -54,4 +54,14 @@ public class Casa {
         }
         return noHumano;
     }
+
+    public  ArrayList<Estudiante> estudiantesHumanos(){
+        ArrayList<Estudiante> Humano = new ArrayList<>();
+        for(Estudiante e: estudiantes){
+            if(e.getEspecie().contains("Human")){
+                Humano.add(e);
+            }
+        }
+        return Humano;
+    }
 }

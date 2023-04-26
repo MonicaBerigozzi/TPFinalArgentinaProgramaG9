@@ -51,7 +51,7 @@ public class RepositorioCasas {
 
         }
         catch (SQLException ex) {
-            System.out.println("Error: en sentencia de creación de casa: \n" + ex.getMessage());
+            System.out.println("Error: en sentencia de selección de casa: \n" + ex.getMessage());
             ex.printStackTrace();
         }
         return result;

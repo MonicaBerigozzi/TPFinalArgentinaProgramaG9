@@ -40,4 +40,12 @@ public class Hogwarts {
         noHumano.addAll(casas.get("Ravenclaw").estudiantesNoHumanos());
         return noHumano;
     }
+
+    public ArrayList<Estudiante> todosEstudiantesHumanos(){
+        ArrayList<Estudiante> Humano = new ArrayList<>(casas.get("Gryffindor").estudiantesHumanos());
+        Humano.addAll(casas.get("Slytherin").estudiantesHumanos());
+        Humano.addAll(casas.get("Hufflepuff").estudiantesHumanos());
+        Humano.addAll(casas.get("Ravenclaw").estudiantesHumanos());
+        return Humano;
+    }
 }
