@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -13,7 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="16cbe872-3d9c-4a3e-9166-51d92b317386">
-      <console name="baseDeDatos" type="STANDARD" schema="main" session="Main"><![CDATA[SELECT * FROM Estudiantes;]]></console>
+      <console name="baseDeDatos" type="STANDARD" schema="main" session="Main"><![CDATA[SELECT * FROM Casas;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
