@@ -55,7 +55,6 @@ public class RepositorioCasas {
             ex.printStackTrace();
         }
         return result;
-
     }
 
 }

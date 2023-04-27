@@ -48,19 +48,20 @@ public class app {
         ArrayList<Estudiante> noHumano = new ArrayList<>();
 
         ///
-        System.out.printf(hogwarts.getCasa("Gryffindor").toString() + "\n");
-        System.out.printf(hogwarts.getCasa("Slytherin").toString() + "\n");
-        System.out.printf(hogwarts.getCasa("Hufflepuff").toString() + "\n");
-        System.out.printf(hogwarts.getCasa("Ravenclaw").toString() + "\n");
-        ////mustra de los estudiantes no humanos
+        System.out.println("\nListado de Estudiantes por casa: ");
+        for (String casa : new  String[]{"Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"}){
+            System.out.println(hogwarts.getCasa(casa).toString());
+        }
+
+        ////muestra de los estudiantes no humanos
         System.out.println("\nEstudiantes no humanos: ");
 
         noHumano=hogwarts.todosEstudiantesNoHumanos();
         for(Estudiante e: noHumano){
-            System.out.printf(e.getNombre() + "(" + e.getEspecie() + ") " + ", ");
+            System.out.println(e.getNombre() + "(" + e.getEspecie() + ") ");
         }
 
-
+        System.out.println("\nPersistiendo casas...");
         /// Persistir Casas
         Connection miConexion = ProveedorConexionSqlite.conectar(".\\data\\baseDeDatos.sqlite");
         RepositorioCasas repositorio = new RepositorioCasas(miConexion);
@@ -73,7 +74,9 @@ public class app {
             }
 
         }
+        System.out.println("Proceso finalizado");
 
+        System.out.println("\nPersistiendo Estudiantes Humanos...");
         /// Persistir Estudiantes Humanos
         Connection miConexion1 = ProveedorConexionSqlite.conectar(".\\data\\baseDeDatos.sqlite");
         RepositorioEstudiantes repoEstud = new RepositorioEstudiantes(miConexion1);
@@ -85,6 +88,7 @@ public class app {
                 repoEstud.agregarEstudiante(e);
             }
         }
+        System.out.println("Proceso finalizado");
     }
 
 

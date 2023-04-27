@@ -38,11 +38,14 @@ public class Casa {
 
     @Override
     public String toString() {
-        return "Casa{" +
-                "idCasa=" + idCasa +
-                ", nombre='" + nombre + '\'' +
-                ", estudiantes=" + estudiantes +
-                '}';
+        String devolver = "Casa =>" +
+                " idCasa= " + idCasa +
+                " - nombre= '" + nombre + '\'' +
+                " - estudiantes=\n";
+        for (Estudiante e : estudiantes){
+            devolver += e.toString() + "\n";
+        }
+        return devolver;
     }
 
     public  ArrayList<Estudiante> estudiantesNoHumanos(){

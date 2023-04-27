@@ -1,6 +1,5 @@
 package data;
 
-import modelo.Casa;
 import modelo.Estudiante;
 
 import java.sql.Connection;
